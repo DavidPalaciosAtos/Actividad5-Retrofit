@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
                             Log.i(TAG, " Llegamos al final.");
 
                             aptoParaCargar = false;
-                            offset += 20;
+                            offset += 30;
                             obtenerDatos(offset);
                         }
                     }
@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void obtenerDatos(int offset) {
         PokeapiService service = retrofit.create(PokeapiService.class);
-        Call<PokemonRespuesta> pokemonRespuestaCall = service.obtenerListaPokemon(20, offset);
+        Call<PokemonRespuesta> pokemonRespuestaCall = service.obtenerListaPokemon(30, offset);
 
         pokemonRespuestaCall.enqueue(new Callback<PokemonRespuesta>() {
             @Override
